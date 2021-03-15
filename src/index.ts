@@ -1,1 +1,3 @@
-export default class Test {}
+const mrt = (): void => {};
+
+export default mrt;

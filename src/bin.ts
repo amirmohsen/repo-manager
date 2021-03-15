@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import Test from './index';
+import mrt from '.';
 
-new Test();
+mrt();
