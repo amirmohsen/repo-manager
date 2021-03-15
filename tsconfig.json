@@ -10,8 +10,7 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "typeRoots": ["./src/types", "node_modules/@types"]
+    "suppressImplicitAnyIndexErrors": true
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules", "out/dist"]
