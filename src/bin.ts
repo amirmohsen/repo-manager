@@ -1,5 +1,3 @@
 #!/usr/bin/env node
 
-import mrt from '.';
-
-mrt();
+import './commands';

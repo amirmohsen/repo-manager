@@ -1,3 +1,1 @@
-const mrt = (): void => {};
-
-export default mrt;
+export * from './actions';
