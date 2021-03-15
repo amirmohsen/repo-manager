@@ -2,11 +2,18 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
+    "lib": ["esnext"],
     "declaration": true,
-    "emitDeclarationOnly": true
-  }
+    "sourceMap": true,
+    "outDir": "out/dist",
+    "strict": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "types": ["jest"],
+    "typeRoots": ["./src/types", "node_modules/@types"]
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "out/dist"]
 }
