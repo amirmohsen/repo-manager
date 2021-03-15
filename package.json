@@ -1,5 +1,5 @@
 {
-  "name": "mono-repo-tools",
+  "name": "@flexverse/mono-repo-tools",
   "description": "Mono-repo tools for Lerna and Yarn workspaces",
   "version": "1.0.0",
   "author": "Amir Mohsen Abdolrazaghi <amirmohsen.a@gmail.com>",
