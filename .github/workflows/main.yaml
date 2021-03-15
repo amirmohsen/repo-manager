@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  build-release:
     runs-on: ubuntu-latest
     steps:
       - name: 'Checkout'
@@ -28,8 +28,8 @@ jobs:
       - name: Build
         run: yarn build
 
-      - name: Build artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: build-artifact
-          path: out/dist
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: yarn release
