@@ -1,18 +1,16 @@
-name: CI
+name: Build and Test
 
 on:
-  push:
-    branches: [main]
   pull_request:
     branches: [main]
 
   workflow_dispatch:
 
 jobs:
-  build-release:
+  build-test:
     runs-on: ubuntu-latest
     steps:
-      - name: 'Checkout'
+      - name: Checkout
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
@@ -23,13 +21,22 @@ jobs:
           node-version: 12
 
       - name: Install
-        run: yarn install --frozen-lockfile
+        run: yarn --frozen-lockfile
+
+      - name: Type Check
+        run: yarn types
+
+      - name: Lint
+        run: yarn lint
 
       - name: Build
         run: yarn build
 
-      - name: Release
+      - name: Test
+        run: yarn test
+
+      - name: Preview Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: yarn release
+        run: yarn release:dry

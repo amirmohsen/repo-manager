@@ -35,8 +35,6 @@ const commit = async ({ message, type, all, root }: ICommit) => {
     );
   }
 
-  console.log(availablePackages);
-
   for (const { packageName, location, files, isRoot } of availablePackages) {
     await commitPackage({
       type,
