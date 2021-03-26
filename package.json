@@ -25,7 +25,7 @@
     "pr:before": "yarn && yarn format",
     "pr:checks": "yarn --frozen-lockfile && yarn types && yarn lint && yarn build && yarn test",
     "release": "semantic-release",
-    "release:dry": "yarn release --dry-run",
+    "release:dry": "yarn release --dry-run --branches main,$(git branch --show-current)",
     "sync-versions": "babel-node --extensions \".ts\" build/updateRootPackageJSONVersion"
   },
   "devDependencies": {
