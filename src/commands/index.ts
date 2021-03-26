@@ -1,5 +1,5 @@
 import yargs from 'yargs/yargs';
-import { commit } from '.';
+import { commit } from '../actions';
 
 const argv = process.argv.slice(2);
 

@@ -1,7 +1,7 @@
 const { OUT_DIST } = require('./constants');
 
 module.exports = {
-  branches: ['main'],
+  branches: ['main', 'checks'],
   plugins: [
     '@semantic-release/commit-analyzer',
     '@semantic-release/release-notes-generator',
