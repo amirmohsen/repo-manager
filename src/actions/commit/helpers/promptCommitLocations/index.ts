@@ -1,20 +1,13 @@
 import { AutoComplete, AutoCompleteChoices } from 'enquirer';
+import promptMultiOptions from '../../../../helpers/promptMultiOptions';
 
-const promptCommitLocations = async (
+const promptCommitLocations = (
   choices: AutoCompleteChoices,
 ): Promise<string[]> => {
-  const prompt = new AutoComplete({
+  return promptMultiOptions({
     message: 'Select packages',
-    multiple: true,
     choices,
-    result(names) {
-      return names.map((name) =>
-        ((this as unknown) as AutoComplete).find(name, 'value'),
-      );
-    },
   });
-
-  return prompt.run();
 };
 
 export default promptCommitLocations;

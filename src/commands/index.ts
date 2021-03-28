@@ -12,23 +12,21 @@ yargs(argv)
         alias: 'm',
         description: 'commit message',
         type: 'string',
-        demandOption: true,
       },
       type: {
         alias: 't',
         description: 'commit type',
         type: 'string',
-        demandOption: true,
       },
-      all: {
-        alias: 'a',
-        description: 'all workspaces',
+      scopes: {
+        alias: 's',
+        description: 'all scopes',
         type: 'boolean',
         default: false,
       },
       root: {
         alias: 'r',
-        description: 'root package',
+        description: 'root (no scope)',
         type: 'boolean',
         default: false,
       },
