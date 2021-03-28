@@ -1,5 +1,5 @@
 import yargs from 'yargs/yargs';
-import { commit } from '../actions';
+import { commit } from '..'; // This must import the index in order to import globals
 
 const argv = process.argv.slice(2);
 
