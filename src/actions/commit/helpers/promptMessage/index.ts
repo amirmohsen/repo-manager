@@ -8,11 +8,17 @@ export interface CommitMessagePromptOptions extends StringPromptOptions {
   root: boolean;
 }
 
+export interface ScopesMetaData {
+  realMaxCount: number;
+  prefixes: string[];
+}
+
 export class CommitMessagePrompt extends StringPrompt {
   maxCount: number;
   type: string;
   scopes: string[];
   root: boolean;
+  scopesMetaData: ScopesMetaData;
 
   constructor({
     scopes,
@@ -26,35 +32,67 @@ export class CommitMessagePrompt extends StringPrompt {
     this.scopes = scopes;
     this.type = type;
     this.root = root;
+    this.scopesMetaData = this.getScopesMetaData();
   }
 
   async format(): Promise<string> {
-    const formatted = await super.format();
-    return `${formatted}\n${this.scopes
-      .map((scope) => {
-        let completeMessage = `${this.type}(${scope}): ${this.state.input}`;
-        const currentCount = completeMessage.length
-          .toString()
-          .padStart(this.maxCount.toString().length, '0');
-        const coloredCurrentCount =
-          completeMessage.length > this.maxCount
-            ? red(currentCount)
-            : green(currentCount);
-        const coloredMaxCount = blue(this.maxCount);
-        completeMessage =
-          completeMessage.length > this.maxCount
-            ? red(completeMessage)
-            : completeMessage;
-        return `(${coloredCurrentCount}/${coloredMaxCount}) ${completeMessage}`;
-      })
-      .join('\n')}`;
+    const firstLine = await this.getFirstLine();
+    const mirrorLines = this.getMirrorLines();
+    return `${firstLine}\n${mirrorLines.join('\n')}`;
   }
 
-  append(ch: string) {
-    // if ((this.inclusivePrefix + this.input).length === this.maxCount) {
-    //   return;
-    // }
-    super.append(ch);
+  private async getFirstLine(): Promise<string> {
+    const formatted = await super.format();
+    return `${formatted} ${this.getCharCountIndicator({
+      message: this.state.input,
+      maxCount: this.scopesMetaData.realMaxCount,
+    })}`;
+  }
+
+  private getMirrorLines(): string[] {
+    return this.scopesMetaData.prefixes.map((prefix) => {
+      const message = `${prefix}${this.state.input}`;
+      return `${this.getCharCountIndicator({
+        message,
+        maxCount: this.maxCount,
+      })} ${message}`;
+    });
+  }
+
+  private getCharCountIndicator({
+    message,
+    maxCount,
+  }: {
+    message: string;
+    maxCount: number;
+  }) {
+    const currentCount = message.length
+      .toString()
+      .padStart(maxCount.toString().length, '0');
+    const coloredCurrentCount =
+      message.length > maxCount ? red(currentCount) : green(currentCount);
+    const coloredMaxCount = blue(maxCount);
+    return `(${coloredCurrentCount}/${coloredMaxCount})`;
+  }
+
+  private getScopesMetaData(): ScopesMetaData {
+    return this.scopes.reduce(
+      (metadata, scope) => {
+        const messagePrefix = `${this.type}(${scope}): `;
+        const remainingCharCount = this.maxCount - messagePrefix.length;
+        return {
+          realMaxCount:
+            remainingCharCount < metadata.realMaxCount
+              ? remainingCharCount
+              : metadata.realMaxCount,
+          prefixes: [...metadata.prefixes, messagePrefix],
+        };
+      },
+      {
+        realMaxCount: this.maxCount,
+        prefixes: [] as string[],
+      },
+    );
   }
 }
 
