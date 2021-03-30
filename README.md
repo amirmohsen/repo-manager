@@ -27,3 +27,7 @@ Use the `reman` command.
 ```
 reman [...commands] [...options]
 ```
+
+## Docs
+
+See [API Reference](./docs/api-reference.md)

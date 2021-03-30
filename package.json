@@ -42,7 +42,8 @@
     "pr:checks": "yarn --frozen-lockfile && yarn types && yarn lint && yarn build && yarn test",
     "release": "semantic-release",
     "release:dry": "yarn release --dry-run --branches main,$(git branch --show-current)",
-    "sync-versions": "babel-node --extensions \".ts\" build/updateRootPackageJSONVersion"
+    "sync-versions": "babel-node --extensions \".ts\" build/updateRootPackageJSONVersion",
+    "build:docs": "babel-node --extensions \".ts\" build/generateAPIReference"
   },
   "devDependencies": {
     "@babel/core": "^7.13.10",
@@ -68,6 +69,7 @@
     "jest-chain": "^1.1.5",
     "jest-github-reporter": "^1.0.2",
     "jest-mock-process": "^1.4.0",
+    "json2md": "^1.10.0",
     "prettier": "^2.2.1",
     "ramda": "^0.27.1",
     "semantic-release": "^17.4.2",
