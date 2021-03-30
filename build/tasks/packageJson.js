@@ -11,13 +11,7 @@ const replaceOutDist = (data, fields) =>
 
 const packageJson = () =>
   src(PACKAGE_JSON)
-    .pipe(
-      jsonTransform(function (data, file) {
-        const copy = data;
-        Reflect.deleteProperty(copy, 'devDependencies');
-        return replaceOutDist(copy, OUT_DIST_FIELDS);
-      }, 2),
-    )
+    .pipe(jsonTransform((data) => replaceOutDist(data, OUT_DIST_FIELDS), 2))
     .pipe(dest(OUT_DIST));
 
 module.exports = packageJson;
