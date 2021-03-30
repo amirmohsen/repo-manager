@@ -1,6 +1,6 @@
 {
-  "name": "@flexverse/mono-repo-tools",
-  "description": "Mono-repo tools for Lerna and Yarn workspaces",
+  "name": "repo-manager",
+  "description": "Tools for managing repositories",
   "version": "1.4.0",
   "author": "Amir Mohsen Abdolrazaghi <amirmohsen.a@gmail.com>",
   "license": "MIT",
@@ -8,7 +8,7 @@
     "access": "public"
   },
   "bin": {
-    "mrt": "out/dist/js/bin.js"
+    "reman": "out/dist/js/bin.js"
   },
   "main": "out/dist/js/index.js",
   "types": "out/dist/dts/index.d.ts",

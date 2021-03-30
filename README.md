@@ -1,8 +1,8 @@
-# Mono-repo Tools
+# Repo Manager
 
 [![Build and Release](https://github.com/amirmohsen/mono-repo-tools/actions/workflows/main-build-release.yaml/badge.svg)](https://github.com/amirmohsen/mono-repo-tools/actions/workflows/main-build-release.yaml) ![npm (scoped)](https://img.shields.io/npm/v/@flexverse/mono-repo-tools)
 
-Mono-repo tools for Lerna and Yarn workspaces
+Tools for managing repositories
 
 ## Installation
 
@@ -22,8 +22,8 @@ For NPM: `npm i -D @flexverse/mono-repo-tools`
 
 ## Usage
 
-Use the `mrt` command.
+Use the `reman` command.
 
 ```
-mrt [...commands] [...options]
+reman [...commands] [...options]
 ```
