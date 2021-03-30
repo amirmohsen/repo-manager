@@ -28,7 +28,7 @@ const mockProcess = ({
 
   process.argv = [
     'node',
-    'mrt',
+    'reman',
     ...(args ? args.split(' ').map((piece) => piece.trim()) : []),
   ];
 
@@ -75,7 +75,7 @@ describe('commands', () => {
 
       restore();
 
-      expect(output.includes('mrt commit')).toBe(true);
+      expect(output.includes('reman commit')).toBe(true);
 
       expect(
         output.includes('Commit message to one, multiple or all scopes'),

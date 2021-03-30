@@ -18,7 +18,7 @@ const BABEL = {
 };
 
 const OUT_DIST = 'out/dist';
-const OUT_DIST_FIELDS = ['bin.mrt', 'main', 'types'];
+const OUT_DIST_FIELDS = ['bin.reman', 'main', 'types'];
 
 const SOURCES = ['src/**/*.ts', '!src/**/*.test.ts'];
 const PACKAGE_JSON = 'package.json';

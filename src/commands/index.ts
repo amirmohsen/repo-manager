@@ -46,7 +46,7 @@ yargs(argv)
       }),
     handler: commit,
   })
-  .scriptName('mrt')
+  .scriptName('reman')
   .demandCommand()
   .version()
   .strict()
