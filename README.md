@@ -30,4 +30,4 @@ reman [...commands] [...options]
 
 ## Docs
 
-See [API Reference](./docs/api-reference.md)
+See [API Reference](https://github.com/amirmohsen/repo-manager/blob/main/docs/api-reference.md)
