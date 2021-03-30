@@ -1,9 +1,10 @@
+import { magenta, cyan } from 'chalk';
 import { globals } from '../../../../helpers/globals';
 import { PackageEntry } from '../../../../types/packages';
 import { ICommit } from '../../types';
 
 export type CommitPackageParams = Omit<PackageEntry, 'shouldCommit'> &
-  Omit<ICommit, 'all' | 'root'>;
+  Required<Omit<ICommit, 'all' | 'root' | 'scopes'>>;
 
 const commitPackage = async ({
   type,
@@ -12,25 +13,32 @@ const commitPackage = async ({
   location,
   files,
   isRoot,
+  dry,
 }: CommitPackageParams) => {
   const { git } = globals;
   if (isRoot) {
     files.forEach((file) => {
-      console.log(`Adding root file: ${file}`);
+      console.log(magenta(`Adding root file: ${file}`));
     });
-    await git.add(files);
+    if (!dry) {
+      await git.add(files);
+    }
   } else {
-    console.log(`Adding ${packageName} at ${location}`);
-    await git.add(location);
+    console.log(magenta(`Adding ${packageName} at ${location}`));
+    if (!dry) {
+      await git.add(location);
+    }
   }
 
   const fullCommitMessage = `${type}${
     isRoot ? '' : `(${packageName})`
   }: ${message}`;
 
-  console.log(`Committing: ${fullCommitMessage}`);
+  console.log(cyan(`Committing: ${fullCommitMessage}`));
 
-  await git.commit(fullCommitMessage);
+  if (!dry) {
+    await git.commit(fullCommitMessage);
+  }
 };
 
 export default commitPackage;

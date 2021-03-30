@@ -1,4 +1,8 @@
 declare module 'enquirer' {
+  export interface PromptOptions {
+    message: string;
+  }
+
   export type AutoCompleteChoices =
     | {
         name: string;
@@ -6,18 +10,39 @@ declare module 'enquirer' {
       }[]
     | string[];
 
-  export interface AutoCompleteOptions {
-    message: string;
+  export interface AutoCompleteOptions extends PromptOptions {
     multiple: boolean;
     choices: AutoCompleteChoices;
-    result: (names: string[]) => any;
+    result?: (names: string[]) => any;
   }
 
-  export class AutoComplete {
+  export class Prompt {}
+
+  export class AutoComplete extends Prompt {
     constructor(options: AutoCompleteOptions);
 
-    run(): Promise<string[]>;
-
     find(name: string, prop: string): string;
+
+    run(): Promise<string[] | string>;
+  }
+
+  export type StringPromptOptions = PromptOptions;
+
+  export class StringPrompt extends Prompt {
+    input: string;
+
+    state: {
+      input: string;
+    };
+
+    constructor(options: StringPromptOptions);
+
+    message(): Promise<string>;
+
+    format(): Promise<string>;
+
+    append(ch: string): void;
+
+    run(): Promise<string>;
   }
 }

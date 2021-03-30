@@ -21,7 +21,7 @@
     "dev": "node ./out/dist/js/bin",
     "types": "tsc --noEmit",
     "test": "jest --testLocationInResults --coverage",
-    "test:watch": "yarn test --watch",
+    "test:watch": "jest --watch",
     "pr:before": "yarn && yarn format",
     "pr:checks": "yarn --frozen-lockfile && yarn types && yarn lint && yarn build && yarn test",
     "release": "semantic-release",
@@ -61,6 +61,8 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.13.10",
+    "@commitlint/load": "^12.0.1",
+    "chalk": "^4.1.0",
     "enquirer": "^2.3.6",
     "read-pkg-up": "^7.0.1",
     "simple-git": "^2.37.0",
