@@ -2,6 +2,7 @@ import { execSync } from 'child_process';
 
 import { PackageList, Workspaces } from '../../../../types/packages';
 import { globals } from '../../../../helpers/globals';
+import errorAndExit from '../../../../helpers/errorAndExit';
 
 const getPkgList = async (): Promise<PackageList> => {
   const { git } = globals;
@@ -12,6 +13,10 @@ const getPkgList = async (): Promise<PackageList> => {
   ) as Workspaces;
   const { packageJson: rootPkgJson } = globals.rootPkgJson;
   const { files } = await git.status();
+
+  if (!files.length) {
+    errorAndExit('Nothing to commit');
+  }
 
   const workspacePackageList = await Promise.all(
     Object.entries(workspaces).map(async ([packageName, { location }]) => ({

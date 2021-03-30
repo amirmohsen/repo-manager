@@ -55,11 +55,12 @@ const getOutput = (stream: NodeJS.WriteStream): string =>
 describe('commands', () => {
   beforeEach(() => {
     jest.resetModules();
-    jest.doMock('../actions');
+    jest.doMock('../helpers/globals');
+    jest.doMock('..');
   });
 
   afterEach(() => {
-    jest.dontMock('../actions');
+    jest.dontMock('..');
   });
 
   describe('when not provided with any arguments', () => {
@@ -72,10 +73,12 @@ describe('commands', () => {
 
       const output = getOutput(process.stdout);
 
+      restore();
+
+      expect(output.includes('mrt commit')).toBe(true);
+
       expect(
-        output.includes(
-          'mrt commit  Commit message to one, multiple or all scopes',
-        ),
+        output.includes('Commit message to one, multiple or all scopes'),
       ).toBe(true);
 
       expect(
@@ -83,8 +86,6 @@ describe('commands', () => {
           'Not enough non-option arguments: got 0, need at least 1',
         ),
       ).toBe(true);
-
-      restore();
     });
   });
 });

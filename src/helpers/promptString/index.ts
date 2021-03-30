@@ -1,4 +1,6 @@
 import { StringPrompt, StringPromptOptions } from 'enquirer';
+import getCharCountIndicator from '../getCharCountIndicator';
+import suffix from '../suffix';
 
 export interface ExtendedStringPromptOptions extends StringPromptOptions {
   maxCount?: number;
@@ -22,9 +24,13 @@ export class ExtendedStringPrompt extends StringPrompt {
 
   async message(): Promise<string> {
     const originalMessage = await super.message();
-    return `${originalMessage} (${(this.inclusivePrefix + this.input).length
-      .toString()
-      .padStart(this.maxCount.toString().length, '0')}/${this.maxCount})`;
+    return suffix(
+      originalMessage,
+      getCharCountIndicator({
+        message: originalMessage,
+        maxCount: this.maxCount,
+      }),
+    );
   }
 
   async format(): Promise<string> {

@@ -21,7 +21,7 @@
     "dev": "node ./out/dist/js/bin",
     "types": "tsc --noEmit",
     "test": "jest --testLocationInResults --coverage",
-    "test:watch": "yarn test --watch",
+    "test:watch": "jest --watch",
     "pr:before": "yarn && yarn format",
     "pr:checks": "yarn --frozen-lockfile && yarn types && yarn lint && yarn build && yarn test",
     "release": "semantic-release",
