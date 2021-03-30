@@ -28,9 +28,15 @@ module.exports = {
       },
     ],
     [
+      '@semantic-release/exec',
+      {
+        prepareCmd: 'yarn build:docs',
+      },
+    ],
+    [
       '@semantic-release/git',
       {
-        assets: ['package.json'],
+        assets: ['package.json', 'docs', 'CHANGELOG.md'],
       },
     ],
     '@semantic-release/github',
