@@ -1,5 +1,5 @@
 {
-  "name": "repo-manager",
+  "name": "@flexverse/repo-manager",
   "description": "Tools for managing repositories",
   "version": "1.4.1",
   "author": "Amir Mohsen Abdolrazaghi <amirmohsen.a@gmail.com>",

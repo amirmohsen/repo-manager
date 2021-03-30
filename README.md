@@ -1,6 +1,6 @@
 # Repo Manager
 
-[![Build and Release](https://github.com/amirmohsen/mono-repo-tools/actions/workflows/main-build-release.yaml/badge.svg)](https://github.com/amirmohsen/mono-repo-tools/actions/workflows/main-build-release.yaml) ![npm (scoped)](https://img.shields.io/npm/v/@flexverse/mono-repo-tools)
+[![Build and Release](https://github.com/amirmohsen/repo-manager/actions/workflows/main-build-release.yaml/badge.svg)](https://github.com/amirmohsen/repo-manager/actions/workflows/main-build-release.yaml) ![npm (scoped)](https://img.shields.io/npm/v/@flexverse/repo-manager)
 
 Tools for managing repositories
 
@@ -10,15 +10,15 @@ You can install either globally or as a development dependency.
 
 ### Global
 
-For Yarn: `yarn global add @flexverse/mono-repo-tools`
+For Yarn: `yarn global add @flexverse/repo-manager`
 
-For NPM: `npm i -g @flexverse/mono-repo-tools`
+For NPM: `npm i -g @flexverse/repo-manager`
 
 ### Development Dependency
 
-For Yarn: `yarn add -D @flexverse/mono-repo-tools`
+For Yarn: `yarn add -D @flexverse/repo-manager`
 
-For NPM: `npm i -D @flexverse/mono-repo-tools`
+For NPM: `npm i -D @flexverse/repo-manager`
 
 ## Usage
 
