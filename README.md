@@ -1,6 +1,6 @@
 # Repo Manager
 
-[![Build and Release](https://github.com/amirmohsen/repo-manager/actions/workflows/main-build-release.yaml/badge.svg)](https://github.com/amirmohsen/repo-manager/actions/workflows/main-build-release.yaml) ![npm (scoped)](https://img.shields.io/npm/v/@flexverse/repo-manager)
+[![Build and Release](https://github.com/amirmohsen/repo-manager/actions/workflows/main-build-release.yaml/badge.svg)](https://github.com/amirmohsen/repo-manager/actions/workflows/main-build-release.yaml) [![npm (scoped)](https://img.shields.io/npm/v/@flexverse/repo-manager)](https://www.npmjs.com/package/@flexverse/repo-manager)
 
 Tools for managing repositories
 

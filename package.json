@@ -1,6 +1,22 @@
 {
   "name": "@flexverse/repo-manager",
   "description": "Tools for managing repositories",
+  "keywords": [
+    "repository",
+    "tools",
+    "repo-manager",
+    "manager",
+    "repo",
+    "cli",
+    "command-line",
+    "commands",
+    "git",
+    "lerna",
+    "yarn workspaces",
+    "mono-repo",
+    "utils",
+    "utility"
+  ],
   "version": "1.4.2",
   "author": "Amir Mohsen Abdolrazaghi <amirmohsen.a@gmail.com>",
   "license": "MIT",
