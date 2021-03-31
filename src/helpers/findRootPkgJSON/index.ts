@@ -10,7 +10,7 @@ export interface FindRootPkgJSONReturnValue {
 
 const isRootPackageJSON = (
   pkg: NormalizedPackageJson,
-): pkg is RootPackageJSON => Array.isArray(pkg.workspaces);
+): pkg is RootPackageJSON => typeof pkg.workspaces !== 'undefined';
 
 const findRootPkgJSON = (
   dir: string = process.cwd(),
