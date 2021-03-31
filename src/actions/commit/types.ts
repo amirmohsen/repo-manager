@@ -4,5 +4,6 @@ export interface ICommit {
   all: boolean;
   scopes: boolean;
   root: boolean;
+  breaking?: boolean;
   dry: boolean;
 }

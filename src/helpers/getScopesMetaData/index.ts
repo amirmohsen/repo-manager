@@ -4,6 +4,7 @@ export interface GetScopesMetaDataProps {
   type: string;
   availablePackages: AvailablePackages;
   maxCount: number;
+  breaking: boolean;
 }
 
 export interface ScopesMetaData {
@@ -15,10 +16,13 @@ const getScopesMetaData = ({
   type,
   availablePackages,
   maxCount,
+  breaking,
 }: GetScopesMetaDataProps): ScopesMetaData => {
   return availablePackages.reduce(
     (metadata, { isRoot, packageName }) => {
-      const messagePrefix = `${type}${isRoot ? '' : `(${packageName})`}: `;
+      const messagePrefix = `${type}${isRoot ? '' : `(${packageName})`}${
+        breaking ? '!' : ''
+      }: `;
       const remainingCharCount = maxCount - messagePrefix.length;
       return {
         realMaxCount:
