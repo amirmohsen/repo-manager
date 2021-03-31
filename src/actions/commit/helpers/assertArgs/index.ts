@@ -1,18 +1,12 @@
 import errorAndExit from '../../../../helpers/errorAndExit';
 import { ICommit } from '../../types';
 
-export interface AssertArgs extends Omit<ICommit, 'dry'> {
+export interface AssertArgs
+  extends Omit<ICommit, 'dry' | 'breaking' | 'message'> {
   allowedTypes?: string[];
 }
 
-const assertArgs = ({
-  message,
-  type,
-  all,
-  scopes,
-  root,
-  allowedTypes,
-}: AssertArgs) => {
+const assertArgs = ({ type, all, scopes, root, allowedTypes }: AssertArgs) => {
   if (all && (root || scopes)) {
     errorAndExit(
       '"all" option cannot be set in combination with the "root" and/or "scopes" options',

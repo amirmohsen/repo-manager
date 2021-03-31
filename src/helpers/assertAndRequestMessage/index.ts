@@ -8,6 +8,7 @@ export interface AssertAndRequestMessageProps {
   type: string;
   message?: string;
   maxCount: number;
+  breaking: boolean;
 }
 
 const assertAndRequestMessage = async ({
@@ -15,11 +16,13 @@ const assertAndRequestMessage = async ({
   type,
   message,
   maxCount,
+  breaking,
 }: AssertAndRequestMessageProps): Promise<string> => {
   const scopesMetaData = getScopesMetaData({
     type,
     availablePackages,
     maxCount,
+    breaking,
   });
 
   if (message) {

@@ -26,6 +26,17 @@ declare module 'enquirer' {
     run(): Promise<string[] | string>;
   }
 
+  export interface ToggleOptions extends PromptOptions {
+    disabled: string;
+    enabled: string;
+  }
+
+  export class Toggle extends Prompt {
+    constructor(options: ToggleOptions);
+
+    run(): Promise<boolean>;
+  }
+
   export type StringPromptOptions = PromptOptions;
 
   export class StringPrompt extends Prompt {

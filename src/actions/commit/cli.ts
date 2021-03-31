@@ -34,6 +34,11 @@ const cli = {
       type: 'boolean',
       default: false,
     },
+    breaking: {
+      alias: 'b',
+      description: 'breaking changes',
+      type: 'boolean',
+    },
     dry: {
       alias: 'd',
       description: 'dry mode (it does not commit anything)',

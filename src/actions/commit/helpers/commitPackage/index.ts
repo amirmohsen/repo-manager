@@ -14,6 +14,7 @@ const commitPackage = async ({
   files,
   isRoot,
   dry,
+  breaking,
 }: CommitPackageParams) => {
   const { git } = globals;
   if (isRoot) {
@@ -30,8 +31,8 @@ const commitPackage = async ({
     }
   }
 
-  const fullCommitMessage = `${type}${
-    isRoot ? '' : `(${packageName})`
+  const fullCommitMessage = `${type}${isRoot ? '' : `(${packageName})`}${
+    breaking ? '!' : ''
   }: ${message}`;
 
   console.log(cyan(`Committing: ${fullCommitMessage}`));
