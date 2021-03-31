@@ -1,3 +1,9 @@
+### [1.5.1](https://github.com/amirmohsen/repo-manager/compare/v1.5.0...v1.5.1) (2021-03-31)
+
+### Bug Fixes
+
+- yarn workspaces ([5bc3b3a](https://github.com/amirmohsen/repo-manager/commit/5bc3b3a2d55e8190a0308760da6cea2639f0c3b2))
+
 ## [1.5.0](https://github.com/amirmohsen/repo-manager/compare/v1.4.8...v1.5.0) (2021-03-31)
 
 ### Features
