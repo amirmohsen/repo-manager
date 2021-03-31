@@ -52,6 +52,12 @@ module.exports = {
       },
     ],
     [
+      '@semantic-release/exec',
+      {
+        prepareCmd: 'yarn format:docs',
+      },
+    ],
+    [
       '@semantic-release/git',
       {
         assets: ['package.json', 'docs', 'CHANGELOG.md'],

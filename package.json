@@ -43,7 +43,8 @@
     "release": "semantic-release",
     "release:dry": "yarn release --dry-run --branches main,$(git branch --show-current)",
     "sync-versions": "babel-node --extensions \".ts\" build/updateRootPackageJSONVersion",
-    "build:docs": "babel-node --extensions \".ts\" build/generateAPIReference"
+    "build:docs": "babel-node --extensions \".ts\" build/generateAPIReference",
+    "format:docs": "prettier --write docs/api-reference.md CHANGELOG.md"
   },
   "devDependencies": {
     "@babel/core": "^7.13.10",
