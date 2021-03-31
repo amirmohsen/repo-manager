@@ -1,3 +1,13 @@
+## [1.5.0](https://github.com/amirmohsen/repo-manager/compare/v1.4.8...v1.5.0) (2021-03-31)
+
+### Features
+
+- breaking change support ([84b72a6](https://github.com/amirmohsen/repo-manager/commit/84b72a6ad602e27d4b9018abdd6797e296a49d04))
+
+### Chore
+
+- format docs ([4b8469f](https://github.com/amirmohsen/repo-manager/commit/4b8469f2ff13ac72129ca71896d942b3b77c8655))
+
 ### [1.4.8](https://github.com/amirmohsen/repo-manager/compare/v1.4.7...v1.4.8) (2021-03-30)
 
 ### Chore
