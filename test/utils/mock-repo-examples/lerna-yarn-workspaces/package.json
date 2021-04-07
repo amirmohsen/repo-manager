@@ -1,0 +1,15 @@
+{
+  "name": "mono-repo-tools-playground",
+  "description": "Mono-repo Tools Playground",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@commitlint/cli": "^12.0.1",
+    "@commitlint/config-conventional": "^12.0.1",
+    "lerna": "^4.0.0"
+  }
+}

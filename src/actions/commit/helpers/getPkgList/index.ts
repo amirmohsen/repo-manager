@@ -6,11 +6,11 @@ import errorAndExit from '../../../../helpers/errorAndExit';
 
 const getPkgList = async (): Promise<PackageList> => {
   const { git } = globals;
-  const workspaces = JSON.parse(
-    execSync('yarn --silent workspaces info', {
-      encoding: 'utf8',
-    }),
-  ) as Workspaces;
+  const output = execSync('yarn --silent workspaces info', {
+    encoding: 'utf8',
+  });
+  console.log('output', output);
+  const workspaces = JSON.parse(output) as Workspaces;
   const { packageJson: rootPkgJson } = globals.rootPkgJson;
   const { files } = await git.status();
 
