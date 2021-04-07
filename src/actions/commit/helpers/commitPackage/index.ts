@@ -1,4 +1,5 @@
 import { magenta, cyan } from 'chalk';
+import { execSync } from 'child_process';
 import { globals } from '../../../../helpers/globals';
 import { PackageEntry } from '../../../../types/packages';
 import { ICommit } from '../../types';
@@ -22,7 +23,9 @@ const commitPackage = async ({
       console.log(magenta(`Adding root file: ${file}`));
     });
     if (!dry) {
-      await git.add(files);
+      execSync(
+        `git add ${files.map((file) => JSON.stringify(file)).join(' ')}`,
+      );
     }
   } else {
     console.log(magenta(`Adding ${packageName} at ${location}`));
