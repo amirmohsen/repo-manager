@@ -1,3 +1,9 @@
+### [1.5.2](https://github.com/amirmohsen/repo-manager/compare/v1.5.1...v1.5.2) (2021-04-07)
+
+### Bug Fixes
+
+- git add command ([559774c](https://github.com/amirmohsen/repo-manager/commit/559774cb60d1bf3c6d120b3acfa24e3603fc2b4a))
+
 ### [1.5.1](https://github.com/amirmohsen/repo-manager/compare/v1.5.0...v1.5.1) (2021-03-31)
 
 ### Bug Fixes
