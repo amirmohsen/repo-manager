@@ -19,6 +19,7 @@ const commit = async ({
 }: ICommit) => {
   const { maxCount, types } = await loadCommitLintConfig();
   assertArgs({ type, all, scopes, root, allowedTypes: types });
+
   await assertPreviousCommitValidity();
 
   const availablePackages = await getAvailablePackages({ root, all, scopes });
