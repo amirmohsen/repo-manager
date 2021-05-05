@@ -1,3 +1,14 @@
+## [1.6.0](https://github.com/amirmohsen/repo-manager/compare/v1.5.2...v1.6.0) (2021-05-05)
+
+### Features
+
+- adding previous commit validity assertion ([271e086](https://github.com/amirmohsen/repo-manager/commit/271e0867480d0fbd40ec7889f0c8b31ddd0cf3f7))
+
+### Refactor
+
+- adding check for commitlint rules ([7206cdb](https://github.com/amirmohsen/repo-manager/commit/7206cdbc0e7bf661a95a5e53d5c164c0543ea06b))
+- adding confirmation with colors ([472ee15](https://github.com/amirmohsen/repo-manager/commit/472ee155fa91344289dd867b73a5c3e198b9483e))
+
 ### [1.5.2](https://github.com/amirmohsen/repo-manager/compare/v1.5.1...v1.5.2) (2021-04-07)
 
 ### Bug Fixes
