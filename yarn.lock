@@ -934,10 +934,10 @@
     "@commitlint/types" "^12.1.1"
     lodash "^4.17.19"
 
-"@commitlint/execute-rule@^12.0.1":
-  version "12.0.1"
-  resolved "https://registry.yarnpkg.com/@commitlint/execute-rule/-/execute-rule-12.0.1.tgz#5bb2eba929270cafb2bd8191799d8b451de7fb7e"
-  integrity sha512-JzyweYfZlFLtXpgP+btzSY3YAkGPg61TqUSYQqBr4+5IaVf1FruMm5v4D5eLu9dAJuNKUfHbM3AEfuEPiZ79pg==
+"@commitlint/execute-rule@^12.1.1":
+  version "12.1.1"
+  resolved "https://registry.yarnpkg.com/@commitlint/execute-rule/-/execute-rule-12.1.1.tgz#8aad1d46fb78b3199e4ae36debdc93570bf765ea"
+  integrity sha512-6mplMGvLCKF5LieL7BRhydpg32tm6LICnWQADrWU4S5g9PKi2utNvhiaiuNPoHUXr29RdbNaGNcyyPv8DSjJsQ==
 
 "@commitlint/is-ignored@^12.1.1":
   version "12.1.1"
@@ -957,14 +957,14 @@
     "@commitlint/rules" "^12.1.1"
     "@commitlint/types" "^12.1.1"
 
-"@commitlint/load@^12.0.1":
-  version "12.0.1"
-  resolved "https://registry.yarnpkg.com/@commitlint/load/-/load-12.0.1.tgz#4d180fc88e5b4cfcb476a245d899f85154137502"
-  integrity sha512-dX8KdCWn7w0bTkkk3zKQpe9X8vsTRa5EM+1ffF313wCX9b6tGa9vujhEHCkSzKAbbE2tFV64CHZygE7rtlHdIA==
+"@commitlint/load@^12.1.1":
+  version "12.1.1"
+  resolved "https://registry.yarnpkg.com/@commitlint/load/-/load-12.1.1.tgz#5a7fb8be11e520931d1237c5e8dc401b7cc9c6c1"
+  integrity sha512-qOQtgNdJRULUQWP9jkpTwhj7aEtnqUtqeUpbQ9rjS+GIUST65HZbteNUX4S0mAEGPWqy2aK5xGd73cUfFSvuuw==
   dependencies:
-    "@commitlint/execute-rule" "^12.0.1"
-    "@commitlint/resolve-extends" "^12.0.1"
-    "@commitlint/types" "^12.0.1"
+    "@commitlint/execute-rule" "^12.1.1"
+    "@commitlint/resolve-extends" "^12.1.1"
+    "@commitlint/types" "^12.1.1"
     chalk "^4.0.0"
     cosmiconfig "^7.0.0"
     lodash "^4.17.19"
@@ -984,10 +984,10 @@
     conventional-changelog-angular "^5.0.11"
     conventional-commits-parser "^3.0.0"
 
-"@commitlint/resolve-extends@^12.0.1":
-  version "12.0.1"
-  resolved "https://registry.yarnpkg.com/@commitlint/resolve-extends/-/resolve-extends-12.0.1.tgz#77509f386e08bd30262ec9a75c783d8f4f028fd2"
-  integrity sha512-Mvg0GDi/68Cqw893ha8uhxE8myHfPmiSSSi7d1x4VJNR4hoS37lBdX89kyx4i9NPmLfviY2cUJKTyK8ZrFznZw==
+"@commitlint/resolve-extends@^12.1.1":
+  version "12.1.1"
+  resolved "https://registry.yarnpkg.com/@commitlint/resolve-extends/-/resolve-extends-12.1.1.tgz#80a78b0940775d17888dd2985b52f93d93e0a885"
+  integrity sha512-/DXRt0S0U3o9lq5cc8OL1Lkx0IjW0HcDWjUkUXshAajBIKBYSJB8x/loNCi1krNEJ8SwLXUEFt5OLxNO6wE9yQ==
   dependencies:
     import-fresh "^3.0.0"
     lodash "^4.17.19"
@@ -1008,13 +1008,6 @@
   version "12.1.1"
   resolved "https://registry.yarnpkg.com/@commitlint/to-lines/-/to-lines-12.1.1.tgz#40fbed1767d637249ce49b311a51909d8361ecf8"
   integrity sha512-W23AH2XF5rI27MOAPSSr0TUDoRe7ZbFoRtYhFnPu2MBmcuDA9Tmfd9N5sM2tBXtdE26uq3SazwKqGt1OoGAilQ==
-
-"@commitlint/types@^12.0.1":
-  version "12.0.1"
-  resolved "https://registry.yarnpkg.com/@commitlint/types/-/types-12.0.1.tgz#04a0cbb8aa56b7c004f8939c2d1ef8892ec68327"
-  integrity sha512-FsNDMV0W7D19/ZbR412klpqAilXASx75Neqh7jPtK278IEwdukOg3vth1r5kTm+BjDScM7wMUEOwIW3NNfAtwg==
-  dependencies:
-    chalk "^4.0.0"
 
 "@commitlint/types@^12.1.1":
   version "12.1.1"
@@ -1669,6 +1662,18 @@
   dependencies:
     jest-diff "^26.0.0"
     pretty-format "^26.0.0"
+
+"@types/lodash.isempty@^4.4.6":
+  version "4.4.6"
+  resolved "https://registry.yarnpkg.com/@types/lodash.isempty/-/lodash.isempty-4.4.6.tgz#48a5576985727d9b85d59a60199d6b11ac756a3e"
+  integrity sha512-AauKrFlA4z3Usog5HLGDupKzkCP7h5KXGlfAcRGUfvTmL7guVuEzDSNI6lYJ7syO7J2RE2F47179pSLr26UHIw==
+  dependencies:
+    "@types/lodash" "*"
+
+"@types/lodash@*":
+  version "4.14.168"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.168.tgz#fe24632e79b7ade3f132891afff86caa5e5ce008"
+  integrity sha512-oVfRvqHV/V6D1yifJbVRU3TMp8OT6o6BG+U9MkwuJ3U8/CsDHvalRpsxBqivn71ztOFZBTfJMvETbqHiaNSj7Q==
 
 "@types/minimist@^1.2.0":
   version "1.2.1"
@@ -6100,6 +6105,11 @@ lodash.isboolean@^3.0.3:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/lodash.isboolean/-/lodash.isboolean-3.0.3.tgz#6c2e171db2a257cd96802fd43b01b20d5f5870f6"
   integrity sha1-bC4XHbKiV82WgC/UOwGyDV9YcPY=
+
+lodash.isempty@^4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/lodash.isempty/-/lodash.isempty-4.4.0.tgz#6f86cbedd8be4ec987be9aaf33c9684db1b31e7e"
+  integrity sha1-b4bL7di+TsmHvpqvM8loTbGzHn4=
 
 lodash.isinteger@^4.0.4:
   version "4.0.4"
