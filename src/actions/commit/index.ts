@@ -1,4 +1,5 @@
 import assertAndRequestMessage from '../../helpers/assertAndRequestMessage';
+import assertPreviousCommitValidity from './helpers/assertPreviousCommitValidity';
 import getAvailablePackages from '../../helpers/getAvailablePackages';
 import assertArgs from './helpers/assertArgs';
 import commitPackage from './helpers/commitPackage';
@@ -18,6 +19,8 @@ const commit = async ({
 }: ICommit) => {
   const { maxCount, types } = await loadCommitLintConfig();
   assertArgs({ type, all, scopes, root, allowedTypes: types });
+
+  await assertPreviousCommitValidity();
 
   const availablePackages = await getAvailablePackages({ root, all, scopes });
 
